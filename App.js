@@ -2,10 +2,10 @@ import React from 'react';
 import { ImageBackground, Image, StyleSheet, Text, View } from 'react-native';
 import { FontAwesome5, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 
-export default function App() {
+export default function VideoCallScreen() {
   return (
     <ImageBackground source={require("./assets/dp1.jpeg")} style={styles.container} >
-      <Image style={styles.image} source={require("./assets/dp2.jpeg")} />
+      <Image style={styles.image} borderRadius={50} source={require("./assets/dp1.jpeg")} />
       <View style={styles.buttonView}>
         <MaterialCommunityIcons.Button style={styles.buttons} name="microphone" borderRadius={50} backgroundColor="#abbacf" size={37} color="white" />
         <Text>{"   "}</Text>
@@ -25,18 +25,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     display: "flex",
-
-  },
-  text: {
-    marginTop: "20%",
-    color: "white"
+    opacity: 0.05
   },
   image: {
     top: "10%",
     width: "40%",
     height: "30%",
     position: "absolute",
-    left: "55%"
   },
   buttons: {
     height: 55,
@@ -47,5 +42,4 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     top: "60%",
   }
-
 });
