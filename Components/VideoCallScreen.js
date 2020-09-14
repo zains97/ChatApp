@@ -8,9 +8,9 @@ const VideoCallScreen = () => {
             <Image style={styles.image} borderRadius={5} source={require("../assets/dp2.jpeg")} />
             <View style={styles.buttonView}>
                 <MaterialCommunityIcons.Button style={styles.buttons} name="microphone" borderRadius={50} backgroundColor="#abbacf" size={37} color="white" />
-                <Text>{"   "}</Text>
+                <Text>{"     "}</Text>
                 <FontAwesome5.Button style={styles.buttons} borderRadius={50} backgroundColor="red" name="phone-slash" size={25} color="white" />
-                <Text>{"   "}</Text>
+                <Text>{"     "}</Text>
                 <Ionicons.Button name="md-megaphone" style={styles.buttons} borderRadius={50} backgroundColor="#abbacf" size={33} color="white" />
             </View>
         </ImageBackground>
