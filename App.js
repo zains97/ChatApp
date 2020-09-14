@@ -1,57 +1,74 @@
 import React from 'react';
-import { ImageBackground, Image, StyleSheet, Text, View } from 'react-native';
-import { FontAwesome5, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { View, Image, Text, StyleSheet, Button } from 'react-native';
+import { MaterialIcons, Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 
-export default function VideoCallScreen() {
+const App = () => {
   return (
-    <ImageBackground blurRadius={10} source={require("./assets/dp1.jpeg")} style={styles.container} >
-      <Image style={styles.image} borderRadius={100} source={require("./assets/dp1.jpeg")} />
-      <Text style={styles.text}>Adam Smith</Text>
-      <Text style={styles.timer}>00:50</Text>
-      <View style={styles.buttonView}>
-        <MaterialCommunityIcons.Button style={styles.buttons} name="microphone" borderRadius={50} backgroundColor="#abbacf" size={37} color="white" />
-        <Text>{"     "}</Text>
-        <FontAwesome5.Button style={styles.buttons} borderRadius={50} backgroundColor="red" name="phone-slash" size={25} color="white" />
-        <Text>{"     "}</Text>
-        <Ionicons.Button name="md-megaphone" style={styles.buttons} borderRadius={50} backgroundColor="#abbacf" size={33} color="white" />
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={{ fontSize: 20, fontWeight: "bold", paddingBottom: "1%", }}>Profile</Text>
       </View>
-    </ImageBackground>
-  );
+      <Image borderRadius={100} style={styles.images} source={require("./assets/dp1.jpeg")} />
+      <Text style={{ marginTop: "5%", fontSize: 18 }}>Adam Smith</Text>
+      <View style={styles.iconsView}>
+        <View style={styles.iconContainer}>
+          <MaterialIcons style={styles.icons} name="account-circle" size={30} color="blue" />
+          <Text>Account Details</Text>
+          <Ionicons name="ios-arrow-forward" size={24} color="black" style={styles.arrow} />
+        </View>
+        <View style={styles.iconContainer}>
+          <SimpleLineIcons name="settings" size={24} color="black" />
+          <Text>Account Details</Text>
+          <Ionicons name="ios-arrow-forward" size={24} color="black" style={styles.arrow} />
+        </View>
+        <View style={styles.iconContainer}>
+          <MaterialIcons name="smartphone" size={24} color="black" />
+          <Text>Account Details</Text>
+          <Ionicons name="ios-arrow-forward" size={24} color="black" style={styles.arrow} />
+        </View>
+      </View>
+      <Button title="Log Out" />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-  text: {
-    position: "absolute",
-    top: "35%",
-    color: "white"
-  },
-  timer: {
-    position: "absolute",
-    top: "40%",
-    color: "white"
-  }
-  ,
   container: {
-    width: "100%",
-    height: "100%",
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    display: "flex",
   },
-  image: {
-    top: "10%",
+  images: {
     width: "35%",
     height: "20%",
-    position: "absolute",
+    marginTop: "5%"
   },
-  buttons: {
-    height: 55,
-    width: 55,
+  header: {
+    marginTop: "10%",
+    fontWeight: "bold",
+    alignItems: "center",
+    width: "100%",
+    borderBottomColor: '#686b6e',
+    borderBottomWidth: 1,
+  },
+  icons: {
+    width: "15%",
+    height: "33%"
+  },
+  iconsView: {
+    height: "38%",
+    width: "66%",
+    alignItems: "center"
 
   },
-  buttonView: {
+  arrow: {
+    marginLeft: "25%",
+  },
+  iconContainer: {
     flexDirection: "row",
-    top: "60%",
+    height: "33%",
+    width: "100%"
   }
-});
+
+})
+
+export default App;
